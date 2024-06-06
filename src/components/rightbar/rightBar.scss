@@ -1,0 +1,115 @@
+@import "../../style.scss";
+.rightbar {
+
+    @include themify($themes){
+
+        @include mobile {
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+    flex: 3;
+    position: sticky;
+    top: 50px;
+
+    background-color: themed("bgSoft");
+    color: themed("textColor");
+
+    height: calc(100vh - 50px);
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+        // padding: 10px;
+
+        .item {
+            box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+            -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+            -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+            
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: themed("bg");
+
+            span {
+                color: themed("textColorSoft");
+            }
+            
+            .user {
+                margin: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .userInfo {
+                    
+                    display: flex;
+                    // justify-content: space-between;
+                    gap: 10px;
+
+                    align-items: center;
+                    position: relative;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+
+                        object-fit: cover;
+                    }
+
+                    .online {
+                        background-color: limegreen;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left: 30px;
+                        
+                    }
+
+                    p {
+                        color: themed("textColorSoft");
+
+                    }
+
+                    span {
+                        // font-size: 14px;
+                        font-weight: 500;
+                        color: themed("textColor");
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    // justify-content: space-between;
+                    align-items: center;
+                    gap: 10px;
+
+                    button {
+                        border: none;
+                        padding: 5px;
+                        color: white;
+
+                        cursor: pointer;
+
+                        &:first-child {
+                            background-color: #5271ff;
+                        }
+
+                        &:last-child {
+                            background-color: #f0544f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
